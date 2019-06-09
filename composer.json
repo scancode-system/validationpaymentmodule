@@ -21,5 +21,9 @@
         "psr-4": {
             "Modules\\ValidationPayment\\": ""
         }
+    },
+    "type": "laravel-module",
+    "require": {
+        "scancode/portal-module": "0.*"
     }
 }
