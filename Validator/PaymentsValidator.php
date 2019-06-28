@@ -2,7 +2,7 @@
 
 namespace Modules\ValidationPayment\Validator;
 
-use App\Imports\ValidatorImport;
+use Modules\Portal\Imports\ValidatorImport;
 
 class PaymentsValidator extends ValidatorImport
 {
