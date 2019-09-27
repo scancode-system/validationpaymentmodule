@@ -3,6 +3,7 @@
 namespace Modules\ValidationPayment\Validator;
 
 use Modules\Portal\Imports\ValidatorImport;
+use Modules\Portal\Rules\NotInCustomRule;
 
 class PaymentsValidator extends ValidatorImport
 {
@@ -11,7 +12,7 @@ class PaymentsValidator extends ValidatorImport
 
 	public function rule($data){
 		return  [
-			'id_condicao_pagamento' => 	'integer|min:1|unique_custom_values',
+			'id_condicao_pagamento' => 	['integer', 'min:1',  new NotInCustomRule($this->chunkColumn('id_condicao_pagamento', 0, $this->row_index-2), 'Duplicado')],
 			'descricao' => 				'filled|string|max:30',
 			'descricao_longa' => 		'string|max:100',
 			'desconto' => 				'integer|min:0|max:100',
@@ -20,4 +21,8 @@ class PaymentsValidator extends ValidatorImport
 		];
 	}
 
+
+public function messages(){
+		return  [];
+	}
 }
