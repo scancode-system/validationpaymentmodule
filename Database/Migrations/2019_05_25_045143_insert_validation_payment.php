@@ -18,7 +18,7 @@ class InsertValidationPayment extends Migration
                 'alias' => 'pagamentos',
                 'module_name' => 'ValidationPayment',
                 'module_alias' => 'validationpayment',
-                'video' => 'https://www.youtube.com/watch?v=sd5Rd4LRGgs&t=34s',
+                'video' => 'https://www.youtube.com/embed/zpOULjyy-n8?rel=0',
                 'file' => 'pagamentos.xlsx',
                 'validation' => 'payments', 
         ]);
