@@ -22,7 +22,13 @@ class PaymentsValidator extends ValidatorImport
 	}
 
 
-public function messages(){
+	public function filterRules(){
+		return [
+			['rule' => ['valor_minimo' => ['required', 'regex:/^(R\$)?( )?([1-9]{1}[\d]{0,2}(\.[\d]{3})*(\,[\d]{0,2})?|[1-9]{1}[\d]{0,}(\,[\d]{0,2})?|0(\,[\d]{0,2})?|(\,[\d]{1,2})?)$/']], 'filter' => 'currencyFormat'],
+		];
+	}
+
+	public function messages(){
 		return  [];
 	}
 }
