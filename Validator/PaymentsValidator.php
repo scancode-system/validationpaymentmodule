@@ -28,6 +28,10 @@ class PaymentsValidator extends ValidatorImport
 		];
 	}
 
+
+public function messages(){
+		return  [];
+	}
 	/*protected $required = ['descricao'];
 
 	public function rule($data){
