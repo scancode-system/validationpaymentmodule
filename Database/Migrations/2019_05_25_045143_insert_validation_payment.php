@@ -21,6 +21,7 @@ class InsertValidationPayment extends Migration
                 'video' => 'https://www.youtube.com/embed/zpOULjyy-n8?rel=0',
                 'file' => 'pagamentos.xlsx',
                 'validation' => 'payments', 
+                'import' => 'Payment@import'
         ]);
     }
 
