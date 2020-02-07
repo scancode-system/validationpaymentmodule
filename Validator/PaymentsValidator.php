@@ -14,7 +14,7 @@ class PaymentsValidator extends ValidatorImport
 	public function rule($data){
 		return  [
 			'id' => ['integer', 'min:1', new NotInCustomRule($this->chunkColumn('id', 0, $this->row_index-2), 'Duplicado')],
-			'description' => ['filled', 'string', 'max:255', new NotInCustomRule($this->chunkColumn('description', 0, $this->row_index-2), 'Duplicado')],
+			'description' => ['filled', 'string', 'max:191', new NotInCustomRule($this->chunkColumn('description', 0, $this->row_index-2), 'Duplicado')],
 			'min_value' => 'numeric|min:0|regex:/^\d+(\.\d{1,2})?$/',
 			'discount' => 'numeric|between:0,100|regex:/^\d+(\.\d{1,2})?$/',
 			'addition' => 'numeric|between:0,100|regex:/^\d+(\.\d{1,2})?$/',
