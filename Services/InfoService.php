@@ -19,6 +19,7 @@ class InfoService extends InfoValidationService
 			'min_value' => 'numeric|min:0|regex:/^\d+(\.\d{1,2})?$/',
 			'discount' => 'numeric|between:0,100|regex:/^\d+(\.\d{1,2})?$/',
 			'addition' => 'numeric|between:0,100|regex:/^\d+(\.\d{1,2})?$/',
+			'visible' => 'integer|min:0|max:1'
 		];
 	}
 
@@ -34,7 +35,7 @@ class InfoService extends InfoValidationService
 		];
 	}
 
-	public function columnsFormat()
+	public function columnsFormat($header)
 	{
 		return [
 			'description' => InfoValidationsService::STRING_FORMAT

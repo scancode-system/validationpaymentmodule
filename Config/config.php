@@ -2,7 +2,7 @@
 
 return [
 	'name' => 'ValidationPayment', 
-	'fields' => ['id', 'description', 'min_value', 'discount', 'addition'],
+	'fields' => ['id', 'description', 'min_value', 'discount', 'addition', 'visible'],
 	'sample' => [
 		[
 			'name' => 'id',
@@ -32,6 +32,12 @@ return [
 			'name' => 'addition',
 			'observation' => 'Aacréscimo em porcentagem.',
 			'sample_1' => '5',
+			'filled' => false
+		], 
+		[
+			'name' => 'visible',
+			'observation' => 'Se o pagamento vai ser visível no aplicativo. 1: para sim e 0: para não',
+			'sample_1' => '1',
 			'filled' => false
 		]
 	]
