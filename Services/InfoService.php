@@ -14,7 +14,7 @@ class InfoService extends InfoValidationService
 
 	public function rule($data, $index, $columns){
 		return  [
-			'id' => ['integer', 'min:1', new NotInCustomRule($this->chunkColumn($columns, 'id', 0, $index-2), 'Duplicado')],
+			'id' => ['nullable', 'integer', 'min:1', new NotInCustomRule($this->chunkColumn($columns, 'id', 0, $index-2), 'Duplicado')],
 			'description' => ['filled', 'string', 'max:191', new NotInCustomRule($this->chunkColumn($columns, 'description', 0, $index-2), 'Duplicado')],
 			'min_value' => 'numeric|min:0|regex:/^\d+(\.\d{1,2})?$/',
 			'discount' => 'numeric|between:0,100|regex:/^\d+(\.\d{1,2})?$/',
@@ -23,7 +23,7 @@ class InfoService extends InfoValidationService
 		];
 	}
 
-	public function modifiers($data)
+	public function modifiers($data )
 	{
 		return [
 			['rule' => ['min_value' => [new NullRule()]], 'filter' => 'setToZero'],
